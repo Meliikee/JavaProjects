@@ -1,24 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        // For döngüsü:
-        for (int i = 0; i <= 10; i += 2) {
-            System.out.println(i);
-        }
-        System.out.println("For Döngüsü Bitti.");
+        double[] myList = {1.2, 8.4, 5.8, 7.9, 6.4};
+        double total = 0;
+        double max = myList[0];
 
-        // While döngüsü:
-        int i = 0;
-        while (i < 10) {
-            i++;
-            System.out.println(i);
+        for (double number : myList) {
+            if (max < number) {
+                max = number;
+            }
+            total += number;
+            System.out.println(number);
         }
-        System.out.println("While Döngüsü Bitti.");
 
-        // Do-While döngüsü:
-        int j = 1;
-        do {
-            System.out.println("Şart sağlanmasa bile bir defa çalışır.");
-        } while (j > 10);
-        System.out.println("Do-While Döngüsü Bitti.");
+        System.out.println("Toplam: " + total);
+        System.out.println("En büyük sayı: " + max);
     }
 }
