@@ -1,22 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        // Mükemmel Sayı
-        // 6 --> 1,2,3
-        // 28 --> 1,2,4,7,14
+        // Arkadaş sayılar
+        // 220-284
 
-        int number = 28;
-        int total = 0;
+        int number1 = 220;
+        int number2 = 284;
+        int toplam1 = 0;
+        int toplam2 = 0;
 
-        for (int i = 1; i < number; i++) {
-            if (number % i == 0) {
-                total += i;
+        for (int i = 1; i < number1; i++) {
+            if (number1 % i == 0) {
+                toplam1 += i;
             }
         }
 
-        if (number == total) {
-            System.out.println("Bu mükemmel sayıdır !");
+        for (int i = 1; i < number2; i++) {
+            if (number2 % i == 0) {
+                toplam2 += i;
+            }
+        }
+
+        if (toplam1 == number2 && toplam2 == number1) {
+            System.out.println("Bu iki sayı arkadaştır.");
         } else {
-            System.out.println("Bu mükemmel sayı değildir.");
+            System.out.println("Bu iki sayı arkadaş değildir.");
         }
     }
 }
