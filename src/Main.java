@@ -1,29 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        // Arkadaş sayılar
-        // 220-284
+        int[] sayilar = new int[]{1, 2, 5, 7, 9, 0};
 
-        int number1 = 220;
-        int number2 = 284;
-        int toplam1 = 0;
-        int toplam2 = 0;
+        int aranacak = 5;
+        boolean varMi = false;
 
-        for (int i = 1; i < number1; i++) {
-            if (number1 % i == 0) {
-                toplam1 += i;
+        for (int sayi : sayilar) {
+            if (sayi == aranacak) {
+                varMi = true;
+                break;
             }
         }
 
-        for (int i = 1; i < number2; i++) {
-            if (number2 % i == 0) {
-                toplam2 += i;
-            }
-        }
-
-        if (toplam1 == number2 && toplam2 == number1) {
-            System.out.println("Bu iki sayı arkadaştır.");
+        if (varMi) {
+            System.out.println("Bu sayı dizide mevcuttur.");
         } else {
-            System.out.println("Bu iki sayı arkadaş değildir.");
+            System.out.println("Bu sayı dizide mevcut değildir.");
         }
     }
 }
