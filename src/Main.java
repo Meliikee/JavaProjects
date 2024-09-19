@@ -1,18 +1,33 @@
 public class Main {
     public static void main(String[] args) {
-        double[] myList = {1.2, 8.4, 5.8, 7.9, 6.4};
-        double total = 0;
-        double max = myList[0];
+        String[][] sehirler = new String[3][3];
 
-        for (double number : myList) {
-            if (max < number) {
-                max = number;
+        sehirler[0][0] = "İstanbul";
+        sehirler[0][1] = "Bursa";
+        sehirler[0][2] = "Bilecik";
+        sehirler[1][0] = "Ankara";
+        sehirler[1][1] = "Konya";
+        sehirler[1][2] = "Kayseri";
+        sehirler[2][0] = "Diyarbakır";
+        sehirler[2][1] = "Şanlıurfa";
+        sehirler[2][2] = "Gaziantep";
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("-------------------------");
+            if (i == 0) {
+                System.out.println("Marmara Bölgesi");
+            } else if (i == 1) {
+                System.out.println("İç Anadolu Bölgesi");
+            } else if (i == 2) {
+                System.out.println("Güneydoğu Anadolu Bölgesi");
+            } else {
+                System.out.println("Bilgi Yok.");
             }
-            total += number;
-            System.out.println(number);
+            System.out.println("-------------------------");
+            for (int j = 0; j < 3; j++) {
+                System.out.print("*\t");
+                System.out.println(sehirler[i][j]);
+            }
         }
-
-        System.out.println("Toplam: " + total);
-        System.out.println("En büyük sayı: " + max);
     }
 }
