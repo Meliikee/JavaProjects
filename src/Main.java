@@ -1,33 +1,34 @@
 public class Main {
     public static void main(String[] args) {
-        String[][] sehirler = new String[3][3];
+        String mesaj = "Bugün hava çok güzel. ";
 
-        sehirler[0][0] = "İstanbul";
-        sehirler[0][1] = "Bursa";
-        sehirler[0][2] = "Bilecik";
-        sehirler[1][0] = "Ankara";
-        sehirler[1][1] = "Konya";
-        sehirler[1][2] = "Kayseri";
-        sehirler[2][0] = "Diyarbakır";
-        sehirler[2][1] = "Şanlıurfa";
-        sehirler[2][2] = "Gaziantep";
+        System.out.println(mesaj);
+        System.out.println("5.eleman: " + mesaj.charAt(4));
+        System.out.println("Eleman sayısı: " + mesaj.length());
+        System.out.println(mesaj.concat("Yaşasın!"));
 
-        for (int i = 0; i < 3; i++) {
-            System.out.println("-------------------------");
-            if (i == 0) {
-                System.out.println("Marmara Bölgesi");
-            } else if (i == 1) {
-                System.out.println("İç Anadolu Bölgesi");
-            } else if (i == 2) {
-                System.out.println("Güneydoğu Anadolu Bölgesi");
-            } else {
-                System.out.println("Bilgi Yok.");
-            }
-            System.out.println("-------------------------");
-            for (int j = 0; j < 3; j++) {
-                System.out.print("*\t");
-                System.out.println(sehirler[i][j]);
-            }
+        System.out.println(mesaj.startsWith("B"));
+        System.out.println(mesaj.endsWith("."));
+
+        char[] karakterler = new char[5];
+        mesaj.getChars(0, 5, karakterler, 0);
+        System.out.println(karakterler);
+
+        System.out.println(mesaj.indexOf('a')); // İlk bulduğunu verir ve aramayı bitirir.
+
+        System.out.println(mesaj.lastIndexOf('a')); // Aramaya sondan başlar ama yine index numarasını verir.
+
+        System.out.println(mesaj.replace(" ", "-"));
+        System.out.println(mesaj.substring(6));
+        System.out.println(mesaj.substring(6, 10));
+
+        for (String kelime : mesaj.split(" ")) {
+            System.out.println(kelime);
         }
+
+        System.out.println(mesaj.toLowerCase());
+        System.out.println(mesaj.toUpperCase());
+
+        System.out.println(mesaj.trim()); // Baştaki ve sondaki boşlukları atar.
     }
 }
