@@ -1,21 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        int[] sayilar = new int[]{1, 2, 5, 7, 9, 0};
+        System.out.println(topla());
+        System.out.println(topla(1));
+        System.out.println(topla(8, 2, 17));
+        System.out.println(topla(1, 2, -5));
+    }
 
-        int aranacak = 5;
-        boolean varMi = false;
-
+    public static int topla(int... sayilar) {
+        int toplam = 0;
         for (int sayi : sayilar) {
-            if (sayi == aranacak) {
-                varMi = true;
-                break;
-            }
+            toplam += sayi;
         }
-
-        if (varMi) {
-            System.out.println("Bu sayı dizide mevcuttur.");
-        } else {
-            System.out.println("Bu sayı dizide mevcut değildir.");
-        }
+        return toplam;
     }
 }
