@@ -1,10 +1,9 @@
 public class Main {
     public static void main(String[] args) {
+        Customer customer = new Customer();
+        Employee employee = new Employee();
 
-        DortIslem dortIslem = new DortIslem();
-        System.out.println(dortIslem.topla(2, 8));
-        System.out.println(dortIslem.topla(2, 8, 7));
-        System.out.println(dortIslem.topla(2, 8, 7, 5));
-
+        EmployeManager employeManager = new EmployeManager();
+        CustomerManager customerManager = new CustomerManager();
     }
 }
