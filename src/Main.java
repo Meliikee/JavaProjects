@@ -1,16 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(topla());
-        System.out.println(topla(1));
-        System.out.println(topla(8, 2, 17));
-        System.out.println(topla(1, 2, -5));
-    }
+        DortIslem dortIslem = new DortIslem();
 
-    public static int topla(int... sayilar) {
-        int toplam = 0;
-        for (int sayi : sayilar) {
-            toplam += sayi;
-        }
-        return toplam;
+        System.out.println(dortIslem.topla(8,7));
+        System.out.println(dortIslem.cikar(8,7));
+        System.out.println(dortIslem.carp(8,7));
+        System.out.println(dortIslem.bol(8,7));
     }
 }
