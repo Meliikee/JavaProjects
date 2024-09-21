@@ -1,11 +1,23 @@
+//import matematik.DortIslem;
+//import matematik.Logaritma;
+
+import matematik.*;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        ProductManager manager = new ProductManager();
+        Scanner scanner = new Scanner(System.in);
 
-        Product product = new Product();
-        product.price = 100;
-        product.name = "Mouse";
+        System.out.print("Bir sayı giriniz: ");
 
-        manager.add(product);
+        int sayi = scanner.nextInt();
+
+        System.out.println("Girilen sayı: " + sayi);
+
+        DortIslem dortIslem = new DortIslem();
+        System.out.println(dortIslem.topla(8, 3));
+
+        Logaritma logaritma = new Logaritma();
+        logaritma.logaritmaHesapla();
     }
 }
