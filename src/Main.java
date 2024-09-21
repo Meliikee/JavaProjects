@@ -1,30 +1,17 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 public class Main {
     public static void main(String[] args) {
 
-        BufferedReader reader = null;
-        int total = 0;
+        AccountManager manager = new AccountManager();
+        System.out.println("Hesap = " + manager.getBalance());
 
-        try {
-            reader = new BufferedReader(new FileReader("Sayilar.txt"));
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                total += Integer.valueOf(line);
-            }
-            System.out.println("Toplam: " + total);
-        } catch (FileNotFoundException e) {
-            System.out.println("Dosya bulunamadı..");
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                reader.close();
-            } catch (Exception e) {
-                System.out.println("Kapatılacak dosya bulunamadı : " + e);
-            }
-        }
+        manager.deposit(1000);
+        System.out.println("Hesap = " + manager.getBalance());
+
+        manager.withdraw(100);
+        System.out.println("Hesap = " + manager.getBalance());
+
+        manager.withdraw(950);
+        System.out.println("Hesap = " + manager.getBalance());
+
     }
 }
