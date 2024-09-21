@@ -1,27 +1,32 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Customer> customers = new ArrayList<Customer>();
 
-        customers.add(new Customer(1, "Melike ", "Dönmez"));
-        customers.add(new Customer(2, "Açelya ", "Dönmez"));
-        customers.add(new Customer(3, "Sude ", "Dönmez"));
+        HashMap<String, String> sozluk = new HashMap<String, String>();
+        sozluk.put("book", "kitap");
+        sozluk.put("table", "masa");
+        sozluk.put("computer", "bilgisayar");
 
-        Customer customer4 = new Customer(4, "Ahmet ", "Mehmet");
-        customers.add(customer4);
+        System.out.println(sozluk);
+        System.out.println(sozluk.size());
 
-        for (Customer customer : customers) {
-            System.out.print(customer.firstName);
-            System.out.println(customer.lastName);
+        System.out.println("---------------------");
+        for (String item : sozluk.keySet()) {
+            System.out.println(item);
         }
 
-        System.out.println("*********************");
-        customers.remove(customer4);
-
-        for (Customer customer : customers) {
-            System.out.print(customer.firstName);
-            System.out.println(customer.lastName);
+        for (String item : sozluk.keySet()) {
+            System.out.println("Eleman: " + item + " -> " + "Değer: " + sozluk.get(item));
         }
+        System.out.println("---------------------");
+
+        System.out.println(sozluk.get("computer"));
+
+        System.out.println(sozluk.remove("table"));
+        System.out.println(sozluk);
+
+        sozluk.clear();
+        System.out.println(sozluk);
     }
 }
