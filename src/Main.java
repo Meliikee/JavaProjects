@@ -1,32 +1,21 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<String> sehirler = new ArrayList<String>();
+        sehirler.add("Ankara");
+        sehirler.add("İstanbul");
+        sehirler.add("Bursa");
+        sehirler.add("Antalya");
+        sehirler.add("İzmir");
 
-        ArrayList sayilar = new ArrayList();
-        sayilar.add(5);
-        sayilar.add(55);
-        sayilar.add(11);
-        sayilar.add("Melike");
+        sehirler.remove(4);
 
-        System.out.println(sayilar.size());
-        sayilar.remove(3);
-        System.out.println(sayilar.size());
-        System.out.println(sayilar.get(2));
-        System.out.println(sayilar.get(1));
-        System.out.println(sayilar.get(0));
+        Collections.sort(sehirler);
 
-        System.out.println("******************");
-
-        for (Object sayi : sayilar) {
-            System.out.println(sayi);
+        for (String sehir : sehirler) {
+            System.out.println(sehir);
         }
-
-        sayilar.set(1, 7);
-        System.out.println(sayilar.get(1));
-
-        sayilar.clear();
-        System.out.println(sayilar.size());
-
     }
 }
