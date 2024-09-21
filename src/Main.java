@@ -7,10 +7,18 @@ public class Main {
         manager.deposit(1000);
         System.out.println("Hesap = " + manager.getBalance());
 
-        manager.withdraw(100);
+        try {
+            manager.withdraw(100);
+        } catch (BalanceInsufficentException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("Hesap = " + manager.getBalance());
 
-        manager.withdraw(950);
+        try {
+            manager.withdraw(950);
+        } catch (BalanceInsufficentException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("Hesap = " + manager.getBalance());
 
     }

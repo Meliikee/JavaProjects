@@ -5,11 +5,11 @@ public class AccountManager {
         balance = getBalance() + amount;
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws BalanceInsufficentException {
         if (balance >= amount) {
             balance = getBalance() - amount;
         } else {
-            System.out.println("Bakiye yetersiz.");
+            throw new BalanceInsufficentException("Bakiye yetersiz !");
         }
     }
 
