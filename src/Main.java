@@ -1,9 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-
-        WomanGameCalculator womanGameCalculator = new WomanGameCalculator();
-        womanGameCalculator.hesapla();
-        womanGameCalculator.gameOver();
-
+        CustomerManager customerManager = new CustomerManager();
+        customerManager.databaseManager = new SqlServerDatabaseManager();
+        customerManager.getCustomers();
     }
 }
