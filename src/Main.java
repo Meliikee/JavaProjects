@@ -1,19 +1,23 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
 
-        try {
-            int[] sayilar = new int[]{1, 2, 3};
-            System.out.println(sayilar[5]);
-        } catch (StringIndexOutOfBoundsException e) {
-            System.out.println(e);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e);
-        } catch (Exception e) {
-            System.out.println("Genel Hata");
-            System.out.println(e);
-        } finally {
-            System.out.println("Ben her türlü çalışırım.");
-        }
+        BufferedReader reader = null;
 
+        try {
+            reader = new BufferedReader(new FileReader("Sayilar.txt"));
+        } catch (FileNotFoundException e) {
+            System.out.println("Dosya bulunamadı..");
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                System.out.println("Kapatılacak dosya bulunamadı..");
+            }
+        }
     }
 }
