@@ -1,21 +1,27 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> sehirler = new ArrayList<String>();
-        sehirler.add("Ankara");
-        sehirler.add("İstanbul");
-        sehirler.add("Bursa");
-        sehirler.add("Antalya");
-        sehirler.add("İzmir");
+        ArrayList<Customer> customers = new ArrayList<Customer>();
 
-        sehirler.remove(4);
+        customers.add(new Customer(1, "Melike ", "Dönmez"));
+        customers.add(new Customer(2, "Açelya ", "Dönmez"));
+        customers.add(new Customer(3, "Sude ", "Dönmez"));
 
-        Collections.sort(sehirler);
+        Customer customer4 = new Customer(4, "Ahmet ", "Mehmet");
+        customers.add(customer4);
 
-        for (String sehir : sehirler) {
-            System.out.println(sehir);
+        for (Customer customer : customers) {
+            System.out.print(customer.firstName);
+            System.out.println(customer.lastName);
+        }
+
+        System.out.println("*********************");
+        customers.remove(customer4);
+
+        for (Customer customer : customers) {
+            System.out.print(customer.firstName);
+            System.out.println(customer.lastName);
         }
     }
 }
