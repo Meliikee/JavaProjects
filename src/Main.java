@@ -1,25 +1,18 @@
+import java.io.File;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
 
-        AccountManager manager = new AccountManager();
-        System.out.println("Hesap = " + manager.getBalance());
-
-        manager.deposit(1000);
-        System.out.println("Hesap = " + manager.getBalance());
-
+        File file = new File("C:\\Users\\dnmzm\\Files\\students.txt");
         try {
-            manager.withdraw(100);
-        } catch (BalanceInsufficentException e) {
-            System.out.println(e.getMessage());
+            if(file.createNewFile()){
+                System.out.println("Dosya oluşturuldu.");
+            }else{
+                System.out.println("Dosya zaten mevcut.");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        System.out.println("Hesap = " + manager.getBalance());
-
-        try {
-            manager.withdraw(950);
-        } catch (BalanceInsufficentException e) {
-            System.out.println(e.getMessage());
-        }
-        System.out.println("Hesap = " + manager.getBalance());
-
     }
 }
