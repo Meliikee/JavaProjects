@@ -1,10 +1,10 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        readFile();
+        writeFile();
         readFile();
     }
 
@@ -44,6 +44,18 @@ public class Main {
             reader.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static void writeFile(){
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\dnmzm\\Files\\students.txt",true));
+            writer.newLine();
+            writer.write("Vatan Bölünmez.");
+            System.out.println("Dosyaya yazıldı.");
+            writer.close();
+        }catch(IOException e){
+            e.printStackTrace();
         }
     }
 }
