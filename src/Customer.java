@@ -1,4 +1,2 @@
-public class Customer {
-    int id;
-    String firstName;
+public class Customer implements IEntity {
 }
